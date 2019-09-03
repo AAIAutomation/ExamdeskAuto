@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+<listners>
+	<listener>Selenium_with_maven.Automation.helper.Listner.RetryListner</listener>
+</listners>
+  <test thread-count="5" name="TestA">
+    <classes>
+      <class name="com.uiframework.proctur.eLearn.logger.resource.A"/>
+    </classes>
+  </test> <!-- Test -->
+    <test thread-count="5" name="TestB">
+    <classes>
+      <class name="com.uiframework.proctur.eLearn.logger.resource.B"/>
+    </classes>
+  </test> <!-- Test -->
+    <test thread-count="5" name="TestC">
+    <classes>
+      <class name="com.uiframework.proctur.eLearn.logger.resource.C"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

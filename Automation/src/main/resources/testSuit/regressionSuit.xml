@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+	<listeners>
+		<!--  <listener class-name="Selenium_with_maven.Automation.helper.Listner.RetryListner"></listener>-->
+		<listener class-name="Selenium_with_maven.Automation.helper.Listner.ExtentListner"></listener>
+	</listeners>
+		<test name="A">
+			<classes>
+				<class name="com.uiframework.proctur.eLearn.logger.resource.A" />
+			</classes>
+		</test> <!-- Test -->
+		<test name="B">
+			<classes>
+				<class name="com.uiframework.proctur.eLearn.logger.resource.B" />
+			</classes>
+		</test> <!-- Test -->
+		<test name="C">
+			<classes>
+				<class name="com.uiframework.proctur.eLearn.logger.resource.C" />
+			</classes>
+		</test> <!-- Test -->
+	<test name="TakeScreenShots">
+			<classes>
+				<class name="Selenium_with_maven.Automation.testbase.testScripts.TakeScreenShots" />
+			</classes>
+		</test>
+</suite> <!-- Suite -->

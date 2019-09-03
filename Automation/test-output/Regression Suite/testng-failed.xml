@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Selenium_with_maven.Automation.helper.Listner.ExtentListner"/>
+  </listeners>
+  <test thread-count="5" name="A(failed)">
+    <classes>
+      <class name="com.uiframework.proctur.eLearn.logger.resource.A">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="beforeTest"/>
+          <include name="testLogin"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.uiframework.proctur.eLearn.logger.resource.A -->
+    </classes>
+  </test> <!-- A(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->
