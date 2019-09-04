@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Selenium_with_maven.Automation.pageObject.testScripts">
+      <class name="Selenium_with_maven.Automation.pageObject.StudentStat">
         <methods>
           <include name="afterMethod"/>
-          <include name="testDashboard"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
           <include name="beforeTest"/>
           <include name="beforeSuite"/>
+          <include name="testDashboard"/>
         </methods>
-      </class> <!-- Selenium_with_maven.Automation.pageObject.testScripts -->
+      </class> <!-- Selenium_with_maven.Automation.pageObject.StudentStat -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

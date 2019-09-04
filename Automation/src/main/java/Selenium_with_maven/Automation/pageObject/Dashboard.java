@@ -71,6 +71,8 @@ public class Dashboard extends TestBase {
 	WebElement GetValueForResultGenerated;
 	@FindBy(xpath="//*[@href='https://test999.examdesk.co/administrator/test/testList']")
 	WebElement clickontestlistpage;
+	@FindBy(xpath="//*[contains(@class,'next disabled')]")
+	WebElement disabledNext;
 
 	public Dashboard(WebDriver driver) {
 		this.driver = driver;
@@ -125,16 +127,15 @@ public class Dashboard extends TestBase {
 	}
 
 	public Object genericMethodToClickOnNextAndTakeCount(WebElement clickOnNext, WebElement recordsPerPage) {
-		int i = 1;
+		int i =1;
 		select100Pagenation(recordsPerPage);
+		List<WebElement> we = driver.findElements(By.xpath("//*[@class='pagination']//following::li"));
+		log.info("total buton present is:"+we.size());
 		if (clickOnNextButton.isDisplayed()) {
-			while (clickOnNext.isDisplayed()) {
+			for(i=1;i<we.size();i++)
+			 {
 				clickOnNext.click();
-				i++;
-				
-			}
-		}
-		else {
+			 }
 		log.info("total pages is" + i);
 		}
 		if (i <= 1) {
@@ -142,7 +143,7 @@ public class Dashboard extends TestBase {
 			return 0;
 		} else if (i > 1) {
 			i = i * 100;
-			return i - 100;
+			return i - 200;
 
 		}
 		return "some error has occured.";
@@ -164,12 +165,12 @@ public class Dashboard extends TestBase {
 		int expected = (totalresutcount + remeaningresultcount);
 		log.info("total Result avalible on page." + expected);
 		HomePage.click();
-		try {
-			driver.findElement(By.xpath("//*[contains(text(),'" + actualno + " Tests')]"));
-		} catch (NoSuchElementException e) {
-
-			log.info("Please check once because This is not an actual no." + actualno);
-		}
+//		try {
+//			driver.findElement(By.xpath("//*[contains(text(),'" + actualno + " Tests')]"));
+//		} catch (NoSuchElementException e) {
+//
+//			log.info("Please check once because This is not an actual no." + actualno);
+//		}
 //		driver.findElement(By.xpath("//*[contains(text(),'"+actualno+" Tests')]")).click();
 //		log.info("element is visibleed");
 		if (driver.findElement(By.xpath("//*[contains(text(),'" + actualno + " Tests')]")) != null) {
@@ -181,7 +182,10 @@ public class Dashboard extends TestBase {
 				log.info("count mismatch");
 			}
 		}
+		else {
 		log.info("Please check once because This is not an actual no." + actualno);
+		}
+	}
 //		int actual = Integer.parseInt(ActualPendinResultCount.getAttribute("text()"));
 //		log.info("actual value is:"+ actual);
 //		if(expected==actual) {
@@ -191,7 +195,7 @@ public class Dashboard extends TestBase {
 //			log.info("count mismatch");
 //		}
 //		
-	}
+	
 
 	private int CountOnPage(List<WebElement> expectedPendinResultCount2) {
 		int i = 0;
@@ -235,7 +239,7 @@ public class Dashboard extends TestBase {
 	}
 	
 	public void ExpectedCountOfTests(String Actualtestcount) throws InterruptedException {
-		new LoginPage(driver).loginToApplication(ObjectReader.reader.getusername(), ObjectReader.reader.getpassword());
+//		new LoginPage(driver).loginToApplication(ObjectReader.reader.getusername(), ObjectReader.reader.getpassword());
 		Actions a = new Actions(driver);
 				a.moveToElement(MouseHoverOnTests).perform();
 				Thread.sleep(1000);
@@ -249,12 +253,20 @@ public class Dashboard extends TestBase {
 		log.info("total records count is" + totalresutcount);
 		List<WebElement> we = driver.findElements(By.xpath("//*[text()='More']"));
 		log.info("The count on last page got is:"+we.size());
-		int totalexpected = totalresutcount+ Integer.parseInt("we.size()");
+		int totalexpected = totalresutcount+ we.size();
 		log.info("the total entry of test pressent in this account is:"+totalexpected);
-		if(driver.findElement(By.xpath("//*[contains(text(),'Total Test' )and //text()='"+Actualtestcount+"']//following::span[1]")) != null);
+		HomePage.click();
+		Thread.sleep(100);
+		if(driver.findElement(By.xpath("//*[contains(text(),'Total Test' )and //text()='"+Actualtestcount+"']//following::span[1]")) != null); 
 		int Actual = Integer.parseInt(Actualtestcount);
 		Assert.assertEquals(Actual, totalexpected);
-		log.info("Both expected and actual ");
-		
-	}
+		log.info("Both expected and actual");
+		log.info("Test has passed");
+		}
+//		{
+//			log.info("please send correct test count");
+//		}
 }
+	
+	
+
