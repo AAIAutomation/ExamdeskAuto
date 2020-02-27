@@ -16,57 +16,60 @@ import Selenium_with_maven.Automation.helper.assertion.VerificationHelper;
 public class DatabaseHelper {
 
 	private WebDriver driver;
-	private Logger log = LoggerHelper.getLogger(VerificationHelper.class);
-	public static String url ="jdbc:mysql://proctur-testbed.cfr5g7gon3pi.ap-southeast-1.rds.amazonaws.com:3306/procturtest";
-	public static String drivername ="com.mysql.jdbc.Driver";
-	public static String username ="procturtest";
-	public static String password ="proctur123";
+	private static Logger log = LoggerHelper.getLogger(VerificationHelper.class);
+	public static String url = "jdbc:mysql://proctur-testbed.cfr5g7gon3pi.ap-southeast-1.rds.amazonaws.com/procturtest";
+//	public static String url ="jdbc:mysql://proctur-testbed.cfr5g7gon3pi.ap-southeast-1.rds.amazonaws.com:3306/procturtest";
+	public static String drivername = "com.mysql.jdbc.Driver";
+	public static String username = "procturtest";
+	public static String password = "procturtest123";
 	public static Connection connection;
 	public static DatabaseHelper instance = null;
-	//public static Object getResultSet;
-	
+	// public static Object getResultSet;
+
 	public DatabaseHelper() {
-		connection = getSiingleInstanceConnection();
+		connection = getSingleInstanceConnection();
 	}
+
 	public static DatabaseHelper getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new DatabaseHelper();
 		}
 		return instance;
 	}
-	private Connection getSiingleInstanceConnection() {
+
+	private Connection getSingleInstanceConnection() {
 		try {
 			Class.forName(drivername);
 			try {
-					DriverManager.getConnection(url , username, password);
-					if (connection!=  null) {
-						log.info("connected to database");
-					}
-		     	}
-			catch(SQLException e) {
-				 log.error("failed to create database connection..."+e);
+				connection	= DriverManager.getConnection(url, username, password);
+				if (connection != null) {
+					log.info("connected to database");
+				}
+			} catch (SQLException e) {
+				log.error("failed to create database connection..." + e);
 			}
-			
-		}
-		catch(ClassNotFoundException e) {
-			log.info("driver not found..."+e);
+
+		} catch (ClassNotFoundException e) {
+			log.info("driver not found..." + e);
 		}
 		return connection;
 	}
+
 	public Connection getConnection() {
 		return connection;
-	}	
-	public ResultSet getResultSet(String dbQiery) {
+	}
+
+	public static ResultSet getResultSet(String dbQuery) {
 		instance = DatabaseHelper.getInstance();
 		connection = instance.getConnection();
-		log.info("executing query"+dbQiery);
+		log.info("executing query test" + dbQuery);
 		try {
 			Statement stmt = connection.createStatement();
-			ResultSet result = stmt.executeQuery(dbQiery);
-			return result;
+			ResultSet rs = stmt.executeQuery(dbQuery);
+			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return null;	
 	}
 }

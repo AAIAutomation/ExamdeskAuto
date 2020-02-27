@@ -37,6 +37,7 @@ import Selenium_with_maven.Automation.helper.BrowserConfiguration.ChromeBrowser;
 import Selenium_with_maven.Automation.helper.BrowserConfiguration.FirefoxBrowser;
 import Selenium_with_maven.Automation.helper.BrowserConfiguration.Config.ObjectReader;
 import Selenium_with_maven.Automation.helper.BrowserConfiguration.Config.PropertyReader;
+import Selenium_with_maven.Automation.helper.excel.ExcelHelper;
 import Selenium_with_maven.Automation.helper.wait.WaitHelper;
 import Selenium_with_maven.Automation.utils.ExtentManager;
 
@@ -83,7 +84,7 @@ public class TestBase {
 			test.log(Status.FAIL, result.getThrowable());
 			String imagepath = captureScreen(result.getName(), driver);
 			test.addScreenCaptureFromPath(imagepath);
-		
+
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.log(Status.PASS, result.getName() + "is PASS");
 			String imagepath = captureScreen(result.getName(), driver);
@@ -93,7 +94,7 @@ public class TestBase {
 		}
 		extent.flush();
 	}
-	
+
 	public WebDriver getBrowserObject(BrowserType bType) {
 
 		try {
@@ -123,7 +124,7 @@ public class TestBase {
 	public void SetUpDriver(BrowserType bType) {
 		log.info("bType is " + bType);
 		driver = getBrowserObject(bType);
-		log.info("browser object got ");	
+		log.info("browser object got ");
 //		log.info("Initilized web driver:" + driver.hashCode());
 		WaitHelper wait = new WaitHelper(driver);
 
@@ -145,9 +146,10 @@ public class TestBase {
 		Calendar calender = Calendar.getInstance();
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy_hh_mm_ss");
 		File screFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		
+
 		try {
-			destFile = new File(reportDirectory + "/" + fileName + "_" + dateFormatter.format(calender.getTime()) + ".png");
+			destFile = new File(
+					reportDirectory + "/" + fileName + "_" + dateFormatter.format(calender.getTime()) + ".png");
 			FileUtils.copyFile(screFile, destFile);
 			Reporter.log("<a href='" + destFile.getAbsolutePath() + "'><img src='" + destFile.getAbsolutePath()
 					+ "'height = '100' width = '100'/></a>");
@@ -156,20 +158,22 @@ public class TestBase {
 		}
 		return destFile.toString();
 	}
+
 	public void getNevigationScreen(WebDriver driver) {
 		log.info("capturing ui nevigation screen...");
 		String screen = captureScreen("", driver);
 		try {
 			test.addScreenCaptureFromPath(screen);
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 		}
 	}
+
 	public static void extentLog(String s1) {
-		TestBase.test.log(Status.INFO, s1);
+//		TestBase.test.log(Status.INFO, s1);
 	}
-	
+
 //	public void MouseHoverToAnyWebElementAndClick(WebElement hover1, WebElement hover2) {
 //		Actions actions = new Actions(driver);
 //		actions.moveToElement(hover1).perform();
@@ -180,4 +184,12 @@ public class TestBase {
 //		actions.click();
 //		log.info("move to core element and clicked.");
 //	}
+
+	public Object[][] getExcelData(String excelName, String SheetName) {
+		String excelLocation = ResourceHelper.getResourcePath("\\src\\main\\resources\\configfile\\TestData.xlsx");
+		log.info("excel Location is" + excelLocation);
+		ExcelHelper excelhelper = new ExcelHelper();
+		Object[][] data = excelhelper.getExcelData(excelLocation, SheetName);
+		return data;
+	}
 }

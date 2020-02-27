@@ -11,4 +11,6 @@ public interface ConfigReader {
 	public BrowserType getBrowserType();
 	public String getusername();
 	public String getpassword();
+	public String getsuperadminusername();
+	public String getsuperadminpassword();
 }

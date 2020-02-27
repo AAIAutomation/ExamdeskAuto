@@ -32,6 +32,8 @@ public class LoginPage {
 	@FindBy(xpath = "/html/body/div[2]/div[2]/form/div[3]/div/p")
 	WebElement ExpectedLogoutMessage;
 	public String ActualLogoutMessage = "Logged Out Successfully.";
+	@FindBy(xpath= "//*[@href='https://test999.examdesk.co/administrator/login']")
+	WebElement gotologinpage;
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -80,6 +82,7 @@ public class LoginPage {
 		TestBase.extentLog("Login Successfully");
 	}
 	public void loginToApplicationAndLogout(String username, String password) {
+		gotologinpage.click();
 		givingUsername(username);
 		givingPassword(password);
 		clickOnSubmitButton();

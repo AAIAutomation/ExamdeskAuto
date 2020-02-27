@@ -29,7 +29,7 @@ public final class AlertHelper {
 		log.info("clicked on ok");
 	}
 	public void dismissAlert() {
-		getAlert().accept();
+		getAlert().dismiss();
 		log.info("clicked on cancel");
 	}
 	public String getAlertText() {

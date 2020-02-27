@@ -14,7 +14,7 @@ public class WindowHelper {
 	private Logger log = LoggerHelper.getLogger(WindowHelper.class);
 
 	public WindowHelper(WebDriver driver) {
-		this.driver = driver;;
+		this.driver = driver;
 		
 	}
 

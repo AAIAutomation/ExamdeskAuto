@@ -2,6 +2,7 @@ package Selenium_with_maven.Automation.pageObject;
 
 import org.testng.annotations.Test;
 
+import Selenium_with_maven.Automation.pageObject.DashboardPage.Dashboard;
 import Selenium_with_maven.Automation.testbase.TestBase;
 
 public class testScripts extends TestBase{

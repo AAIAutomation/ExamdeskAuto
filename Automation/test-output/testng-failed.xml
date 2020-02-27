@@ -3,16 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Selenium_with_maven.Automation.pageObject.StudentStat">
+      <class name="Examdesk_End_To_End_Flow.Add_Question">
         <methods>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
+          <include name="Add_New_QuestionsMatchMatrixType" invocation-numbers="0"/>
+          <include name="Add_New_QuestionsMatchTheFollowingType"/>
           <include name="beforeClass"/>
           <include name="beforeTest"/>
           <include name="beforeSuite"/>
-          <include name="testDashboard"/>
         </methods>
-      </class> <!-- Selenium_with_maven.Automation.pageObject.StudentStat -->
+      </class> <!-- Examdesk_End_To_End_Flow.Add_Question -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

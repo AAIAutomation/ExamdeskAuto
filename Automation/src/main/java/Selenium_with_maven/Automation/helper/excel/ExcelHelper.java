@@ -23,7 +23,8 @@ public class ExcelHelper {
 			Object dataSets[][] = null;
 			FileInputStream file = new FileInputStream(new File(excelLocation));
 			// create workbook instance
-			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFWorkbook workbook;
+			workbook = new XSSFWorkbook(file);
 
 			// Get sheet name from workbook
 			XSSFSheet sheet = workbook.getSheet(sheetName);
@@ -31,38 +32,41 @@ public class ExcelHelper {
 			// count number of active rows(row which has data) in excel sheet.
 			int totalRow = sheet.getLastRowNum();
 			log.info(totalRow);
-			
 
 			// count active column in row
 
-			int totalColumn = sheet.getRow(0).getLastCellNum();
+			int totalColumn = sheet.getRow(0).getLastCellNum() + 1;
 			log.info(totalColumn);
 
-			dataSets = new Object[totalRow+1][totalColumn];
-			log.info(dataSets.toString());
+			dataSets = new Object[totalRow][totalColumn - 1];
+//			log.info(dataSets.toString());
 
 			// iterate throw row one by one using iterator.
 			Iterator<Row> rowIterator = sheet.iterator();
 			int i = 0;
-			while (rowIterator.hasNext()) {
+			while (i < totalRow) {
 				i++;
 				// for every row we need to iterate over column.
 				Row row = rowIterator.next();
 
 				Iterator<Cell> cellIterator = row.cellIterator();
 				int j = 0;
-				while (cellIterator.hasNext()) {
-					Cell cell = cellIterator.next();
+				while (j+1 < totalColumn) {
 
+					Cell cell = cellIterator.next();
+					if (cell.getStringCellValue().contains("start")) {
+						i = 0;
+						break;
+					}
 					switch (cell.getCellTypeEnum()) {
 					case STRING:
-						dataSets[i-1][j++] = cell.getStringCellValue();
+						dataSets[i - 1][j++] = cell.getStringCellValue();
 						break;
 					case NUMERIC:
-						dataSets[i-1][j++] = cell.getStringCellValue();
+						dataSets[i - 1][j++] = cell.getNumericCellValue();
 						break;
 					case BOOLEAN:
-						dataSets[i-1][j++] = cell.getBooleanCellValue();
+						dataSets[i - 1][j++] = cell.getBooleanCellValue();
 						break;
 
 					default:
@@ -73,17 +77,18 @@ public class ExcelHelper {
 
 			}
 			return dataSets;
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+//
 	public static void main(String[] args) {
 		ExcelHelper excelhelper = new ExcelHelper();
-		String excelLocation = ResourceHelper.getResourcePath("/src/main/resources/configfile/TestData.xlsx");
-		Object[][] data = excelhelper.getExcelData(excelLocation, "Login");
+		String excelLocation = ResourceHelper.getResourcePath("\\src\\main\\resources\\configfile\\TestData.xlsx");
+		Object[][] data = excelhelper.getExcelData(excelLocation, "matchTheFollowing");
 		System.out.println(data);
-		
+
 	}
 }

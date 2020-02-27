@@ -5230,3 +5230,127 @@ Driver info: driver.version: ChromeDriver
 2019-09-04 17:09:942 % 5p VerificationHelper :79 - Login Successfully
 2019-09-04 17:09:573 % 5p VerificationHelper :58 - Total Excepted Student Count is:8
 2019-09-04 17:09:958 % 5p VerificationHelper :72 - something went wrong
+2020-01-02 17:01:178 % 5p TestBase :65 - destination file
+2020-01-02 17:01:182 % 5p TestBase :124 - bType is Chrome
+2020-01-02 17:01:616 % 5p TestBase :118 - session not created: This version of ChromeDriver only supports Chrome version 76
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-7ABDC91', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00CC7C93+1473683]
+	Ordinal0 [0x00C4ADB1+961969]
+	Ordinal0 [0x00BD42E3+475875]
+	Ordinal0 [0x00B6F365+62309]
+	Ordinal0 [0x00B6BC77+48247]
+	Ordinal0 [0x00B89149+168265]
+	Ordinal0 [0x00B88D1D+167197]
+	Ordinal0 [0x00B8742B+160811]
+	Ordinal0 [0x00B70AE6+68326]
+	Ordinal0 [0x00B71BF0+72688]
+	Ordinal0 [0x00B71B89+72585]
+	Ordinal0 [0x00C64B77+1067895]
+	GetHandleVerifier [0x00D66875+506677]
+	GetHandleVerifier [0x00D66610+506064]
+	GetHandleVerifier [0x00D6D1B8+533624]
+	GetHandleVerifier [0x00D6704A+508682]
+	Ordinal0 [0x00C5C266+1032806]
+	Ordinal0 [0x00C5C0DF+1032415]
+	Ordinal0 [0x00C66A8B+1075851]
+	Ordinal0 [0x00C66BF3+1076211]
+	Ordinal0 [0x00C65BA5+1072037]
+	BaseThreadInitThunk [0x75613744+36]
+	RtlSetCurrentTransaction [0x77B1A064+212]
+	RtlSetCurrentTransaction [0x77B1A02F+159]
+
+2020-01-02 17:01:617 % 5p TestBase :126 - browser object got 
+2020-01-02 17:01:620 % 5p WaitHelper :32 - Implicit wait has been set to 200
+2020-01-02 17:01:973 % 5p TestBase :65 - destination file
+2020-01-02 17:01:979 % 5p TestBase :124 - bType is Chrome
+2020-01-02 17:01:13 % 5p TestBase :126 - browser object got 
+2020-01-02 17:01:14 % 5p WaitHelper :32 - Implicit wait has been set to 200
+2020-01-02 17:01:25 % 5p WaitHelper :34 - check its coming inside impliciate wait method inside waithelper.
+2020-01-02 17:01:25 % 5p WaitHelper :105 - wait for page to load for :100AndSECONDS
+2020-01-02 17:01:30 % 5p WaitHelper :107 - page is loaded
+2020-01-02 17:01:163 % 5p TestBase :133 - test to check its coming inside setup driver maximize
+2020-01-02 17:01:661 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 17:01:429 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 17:01:11 % 5p VerificationHelper :48 - send username
+2020-01-02 17:01:130 % 5p VerificationHelper :55 - send password
+2020-01-02 17:01:415 % 5p VerificationHelper :61 - submitted successfully
+2020-01-02 17:01:416 % 5p VerificationHelper :79 - Login Successfully
+2020-01-02 17:01:676 % 5p VerificationHelper :90 - Successfully clicked on evaluation link.
+2020-01-02 17:01:218 % 5p VerificationHelper :94 - Successfully clicked on result link.
+2020-01-02 17:01:222 % 5p VerificationHelper :153 - Driver still on resut page
+2020-01-02 17:01:225 % 5p DropdownHelper :20 - dropdown Helper Object Created...
+2020-01-02 17:01:298 % 5p DropdownHelper :35 - select using value and value is100
+2020-01-02 17:01:359 % 5p VerificationHelper :126 - 100 records per page are present.
+2020-01-02 17:01:380 % 5p VerificationHelper :133 - total buton present is:7
+2020-01-02 17:01:858 % 5p VerificationHelper :139 - total pages is7
+2020-01-02 17:01:858 % 5p VerificationHelper :162 - total records count is500
+2020-01-02 17:01:902 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:924 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:946 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:967 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:989 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:10 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:34 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:55 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:77 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:97 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:120 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:143 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:165 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:187 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:215 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:240 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:262 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:283 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:304 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:324 % 5p VerificationHelper :204 - total element found is:Publish All
+2020-01-02 17:01:325 % 5p VerificationHelper :164 - total count of result is 20
+2020-01-02 17:01:325 % 5p VerificationHelper :166 - total Result avalible on page.520
+2020-01-02 17:01:605 % 5p TestBase :65 - destination file
+2020-01-02 17:01:613 % 5p TestBase :124 - bType is Chrome
+2020-01-02 17:01:16 % 5p TestBase :126 - browser object got 
+2020-01-02 17:01:19 % 5p WaitHelper :32 - Implicit wait has been set to 200
+2020-01-02 17:01:34 % 5p WaitHelper :34 - check its coming inside impliciate wait method inside waithelper.
+2020-01-02 17:01:35 % 5p WaitHelper :105 - wait for page to load for :100AndSECONDS
+2020-01-02 17:01:43 % 5p WaitHelper :107 - page is loaded
+2020-01-02 17:01:181 % 5p TestBase :133 - test to check its coming inside setup driver maximize
+2020-01-02 17:01:665 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 17:01:423 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 17:01:357 % 5p VerificationHelper :48 - send username
+2020-01-02 17:01:493 % 5p VerificationHelper :55 - send password
+2020-01-02 17:01:242 % 5p VerificationHelper :61 - submitted successfully
+2020-01-02 17:01:243 % 5p VerificationHelper :79 - Login Successfully
+2020-01-02 17:01:353 % 5p TestBase :65 - destination file
+2020-01-02 17:01:359 % 5p TestBase :124 - bType is Chrome
+2020-01-02 17:01:867 % 5p TestBase :126 - browser object got 
+2020-01-02 17:01:869 % 5p WaitHelper :32 - Implicit wait has been set to 200
+2020-01-02 17:01:881 % 5p WaitHelper :34 - check its coming inside impliciate wait method inside waithelper.
+2020-01-02 17:01:881 % 5p WaitHelper :105 - wait for page to load for :100AndSECONDS
+2020-01-02 17:01:888 % 5p WaitHelper :107 - page is loaded
+2020-01-02 17:01:26 % 5p TestBase :133 - test to check its coming inside setup driver maximize
+2020-01-02 17:01:533 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 17:01:310 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 17:01:527 % 5p VerificationHelper :48 - send username
+2020-01-02 17:01:659 % 5p VerificationHelper :55 - send password
+2020-01-02 17:01:111 % 5p VerificationHelper :61 - submitted successfully
+2020-01-02 17:01:112 % 5p VerificationHelper :79 - Login Successfully
+2020-01-02 18:01:120 % 5p TestBase :65 - destination file
+2020-01-02 18:01:124 % 5p TestBase :124 - bType is Chrome
+2020-01-02 18:01:36 % 5p TestBase :126 - browser object got 
+2020-01-02 18:01:37 % 5p WaitHelper :32 - Implicit wait has been set to 200
+2020-01-02 18:01:46 % 5p WaitHelper :34 - check its coming inside impliciate wait method inside waithelper.
+2020-01-02 18:01:46 % 5p WaitHelper :105 - wait for page to load for :100AndSECONDS
+2020-01-02 18:01:50 % 5p WaitHelper :107 - page is loaded
+2020-01-02 18:01:178 % 5p TestBase :133 - test to check its coming inside setup driver maximize
+2020-01-02 18:01:372 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 18:01:981 % 5p TestBase :160 - capturing ui nevigation screen...
+2020-01-02 18:01:686 % 5p VerificationHelper :50 - send username
+2020-01-02 18:01:754 % 5p VerificationHelper :57 - send password
+2020-01-02 18:01:826 % 5p VerificationHelper :63 - submitted successfully
+2020-01-02 18:01:827 % 5p VerificationHelper :81 - Login Successfully
+2020-01-03 15:01:239 % 5p LoggerHelper :26 - hfkjds
+2020-01-03 15:01:242 % 5p LoggerHelper :27 - cnsajk
+2020-01-03 15:01:242 % 5p LoggerHelper :28 - jcakls

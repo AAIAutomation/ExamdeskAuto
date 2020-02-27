@@ -9,11 +9,18 @@ public class AssertHelper {
 
 	private static Logger log = LoggerHelper.getLogger(AssertHelper.class);
 
-	public static void VerifyText(String s1, String s2) {
+	public static int VerifyText(String s1, String s2) {
 		log.info("verifying text:" + s1 + "with" + s2);
 		Assert.assertEquals(s1, s2);
+		return 0;
 	}
-
+	
+	public static int VerifyNumber(int n1, int n2) {
+		log.info("verifying text:" + n1 + "with" + n2);
+		Assert.assertEquals(n1, n2);
+		return 0;
+	}
+	
 	public static void makeTrue() {
 		log.info("making script PASS...");
 		Assert.assertTrue(true);

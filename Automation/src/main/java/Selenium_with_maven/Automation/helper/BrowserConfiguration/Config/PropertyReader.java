@@ -48,5 +48,13 @@ public class PropertyReader implements ConfigReader {
 	public String getURL() {
 		return OR.getProperty("url");
 	}
+	
+	public String getsuperadminusername() {
+		return OR.getProperty(("superadminusername"));
+	}
+	
+	public String getsuperadminpassword() {
+		return OR.getProperty(("superadminpassword"));
+	}
 
 }
